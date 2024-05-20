@@ -11,6 +11,8 @@ import (
 	"opengate/controller"
 	"opengate/repository"
 	"opengate/services"
+
+	"github.com/gofreego/goutils/configutils"
 )
 
 var (
@@ -27,22 +29,22 @@ func init() {
 func main() {
 	// Use the specified configPath or the default value if not provided
 	fmt.Printf("Using Env: %s\n & Config file path : %s", env, configPath)
-
+	var conf config.Config
 	// Get the configuration
-	cfg, err := config.GetConfig(env, configPath)
+	err := configutils.ReadConfig(fmt.Sprintf("%s%s.yaml", configPath, env), &conf)
 	if err != nil {
 		log.Fatalf("Error getting configuration: %v", err)
 	}
 
-	bytes, _ := json.MarshalIndent(cfg, "", "    ")
+	bytes, _ := json.MarshalIndent(conf, "", "    ")
 	log.Printf("config: \n %s", bytes)
 
 	ctx := context.Background()
 
-	cache := cache.NewCache(ctx, &cfg.Cache)
-	repo := repository.NewRepository(ctx, cfg.Repository)
-	srvFactory := services.NewServiceFactory(ctx, cfg.Service, repo, cache)
-	ctrl := controller.NewController(ctx, &cfg.Controller, srvFactory)
+	cache := cache.NewCache(ctx, &conf.Cache)
+	repo := repository.NewRepository(ctx, conf.Repository)
+	srvFactory := services.NewServiceFactory(ctx, conf.Service, repo, cache)
+	ctrl := controller.NewController(ctx, &conf.Controller, srvFactory)
 	if err = ctrl.Listen(ctx); err != nil {
 		log.Panic(err)
 	}

@@ -5,7 +5,7 @@ import (
 	"opengate/models/dao"
 	"regexp"
 
-	"github.com/bappaapp/goutils/logger"
+	"github.com/gofreego/goutils/logger"
 )
 
 func (s *Service) getServiceConfig(ctx context.Context, urlPath string) *dao.ServiceConfig {

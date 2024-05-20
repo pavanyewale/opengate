@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/bappaapp/goutils/logger"
+	"github.com/gofreego/goutils/logger"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

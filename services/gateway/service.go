@@ -7,7 +7,7 @@ import (
 	"opengate/models/dao"
 	"regexp"
 
-	"github.com/bappaapp/goutils/logger"
+	"github.com/gofreego/goutils/logger"
 )
 
 type SrvConf struct {

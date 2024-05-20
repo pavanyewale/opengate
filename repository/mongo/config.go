@@ -6,7 +6,7 @@ import (
 	"opengate/models/dao"
 	"opengate/utils"
 
-	"github.com/bappaapp/goutils/logger"
+	"github.com/gofreego/goutils/logger"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

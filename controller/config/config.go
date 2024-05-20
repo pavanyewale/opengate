@@ -5,8 +5,8 @@ import (
 	"opengate/models/dto"
 	"opengate/utils"
 
-	"github.com/bappaapp/goutils/logger"
 	"github.com/gin-gonic/gin"
+	"github.com/gofreego/goutils/logger"
 )
 
 type Config struct {

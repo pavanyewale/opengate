@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bappaapp/goutils/logger"
 	"github.com/gin-gonic/gin"
+	"github.com/gofreego/goutils/logger"
 )
 
 func (s *Service) authorize(ctx *gin.Context) (*dto.AuthorizationResponse, error) {

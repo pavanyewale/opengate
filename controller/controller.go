@@ -11,8 +11,8 @@ import (
 	"opengate/controller/swagger"
 	"opengate/services"
 
-	"github.com/bappaapp/goutils/logger"
 	"github.com/gin-gonic/gin"
+	"github.com/gofreego/goutils/logger"
 )
 
 type Config struct {

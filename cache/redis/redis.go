@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/bappaapp/goutils/logger"
 	"github.com/go-redis/redis/v8"
+	"github.com/gofreego/goutils/logger"
 )
 
 type RedisClient struct {
